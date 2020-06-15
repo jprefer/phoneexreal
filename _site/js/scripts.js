@@ -32,7 +32,7 @@
     });
  // Taken out 0615/2020
 	// jQuery for page scrolling feature - requires jQuery Easing plugin
-	/*$(function() {
+	$(function() {
 		$(document).on('click', 'a.page-scroll', function(event) {
 			var $anchor = $(this);
 			$('html, body').stop().animate({
@@ -41,7 +41,7 @@
 			event.preventDefault();
 		});
 	});
-*/
+
     // closes the responsive menu on menu item click
     $(".navbar-nav li a").on("click", function(event) {
     if (!$(this).parent().hasClass('dropdown'))
