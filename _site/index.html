@@ -9,16 +9,16 @@
     <meta name="author" content="Inovatik">
 
     <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
+	<meta property="og:site_name" content="PhoneEx - Mobile Mobile E-Commerce Done Better" /> <!-- website name -->
+	<meta property="og:site" content="https://www.ThePhoneEx.com" /> <!-- website link -->
+	<meta property="og:title" content="The Phone Ex"/> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content="Mobile Mobile E-Commerce Done Better" /> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content="https://www.ThePhoneEx.com/images/400dpiLogo.jpg" /> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content="https://www.ThePhoneEx.com" /> <!-- where do you want your post to link to -->
 	<meta property="og:type" content="article" />
 
     <!-- Website Title -->
-    <title>PhoneEx - Mobile App HTML Landing Page Template</title>
+    <title>PhoneEx - Mobile Mobile E-Commerce Done Better</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
@@ -31,6 +31,43 @@
 	
 	<!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $("#submit").click(function(e) {
+                e.preventDefault();
+
+                var name = $("#name").val(),
+                    email = $("#email").val(),
+                    phone = $("#phone").val(),
+                    wsource = $("#wsource").val(),
+                    desc = $("#desc").val();
+
+                $.ajax({
+                    type: "POST",
+                    url: 'https://6632bs8ve0.execute-api.us-east-1.amazonaws.com/TestAPI/contact-us',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        'name': name,
+                        'phone':phone,
+                        'email': email,
+                        'desc': desc,
+                        'wsource': "www.ThephoneEx.com - ContactForm"
+                    }),
+                    success: function(res){
+                        $('#form-response').text('Thank You Message Sent.');
+                    },
+                    error: function(){
+                        $('#form-response').text('Error.');
+                    }
+                });
+
+            })
+
+        });
+    </script> 
 </head>
 <body data-spy="scroll" data-target=".fixed-top">
     
@@ -115,8 +152,9 @@
                         <div class="text-container">
                             <h1>MOBILE E-COMMERCE APP <br>FOR <span id="js-rotating">BUYERS, SELLERS</span></h1>
                             <p class="p-large">PhoneEx is the future of wholesale mobile e-commerce. Download it today!</p>
-                            <a class="btn-solid-lg page-scroll" href="#your-link"><i class="fab fa-apple"></i>APP STORE</a>
-                            <a class="btn-solid-lg page-scroll" href="#your-link"><i class="fab fa-google-play"></i>PLAY STORE</a>
+                            <a class="btn-solid-lg page-scroll" href="waitlist.html"><i class="fab fa-apple"></i>APP STORE</a>
+                            <a class="btn-solid-lg page-scroll" href="waitlist.html"><i class="fab fa-google-play"></i>PLAY STORE</a>
+                            <a class="btn-solid-lg page-scroll" href="waitlist.html"><i class="fa fa-desktop"></i> WEB  LINK </a>
                         </div>
                     </div> <!-- end of col -->
                     <div class="col-lg-6">
@@ -138,7 +176,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>What is it?</h2>
+                    <h2>What is PhoneEx?</h2>
                     <div class="p-heading p-large">PhoneEx was designed based on input from wholesale mobile buyers and sellers to be the most advanced easy to use app to buy and sell  mobile phones.</div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
@@ -172,8 +210,9 @@
                                     <div class="card left-pane first">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Goal Setting</h4>
-                                                <p>Like any self improving process, everything starts with setting your goals and committing to them</p>
+                                                <h4 class="card-title">The Phone Ex App</h4>
+                                                <p>One stop place to buy / sell wholesale mobile phones
+</p>
                                             </div>
                                             <div class="card-icon2">
                                                 <i class="far fa-compass"></i>
@@ -183,8 +222,9 @@
                                     <div class="card left-pane">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Visual Editor</h4>
-                                                <p>PhoneEx provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
+                                                <h4 class="card-title">A Marriage Made in Heaven</h4>
+                                                <p>The PhoneEx App is the new way of marrying local phone dealers with large distributors. 
+</p>
                                             </div>
                                             <div class="card-icon2">
                                                 <i class="far fa-file-code"></i>
@@ -194,8 +234,8 @@
                                     <div class="card left-pane">
                                         <div class="card-body">
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Refined Options</h4>
-                                                <p>Each option packaged in the app's menus is provided in order to improve your personal development status</p>
+                                                <h4 class="card-title">Happy Buyers</h4>
+                                                <p>Local phone dealers can buy equipment they need at the right price.  </p>
                                             </div>
                                             <div class="card-icon2">
                                                 <i class="far fa-gem"></i>
@@ -219,8 +259,8 @@
                                                 <i class="far fa-calendar-check"></i>
                                             </div>
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Calendar Input</h4>
-                                                <p>Schedule your appointments, meetings and periodical evaluations using the provided in-app calendar option</p>
+                                                <h4 class="card-title">Successful Sellers</h4>
+                                                <p>The large phone distributors can sell their equipment at much greater margins with their payments guaranteed</p>
                                             </div>
                                         </div>
                                     </div>
@@ -230,8 +270,8 @@
                                                 <i class="far fa-bookmark"></i>
                                             </div>
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Easy Reading</h4>
-                                                <p>Reading focus mode for long form articles, ebooks and other materials which involve large text areas</p>
+                                                <h4 class="card-title">Painless and Intuitive </h4>
+                                                <p>The PhoneEx App is the middleman in the transaction which makes buying wholesale cellular phone and accessories as easy as pressing a button. </p>
                                             </div>
                                         </div>
                                     </div>
@@ -241,8 +281,8 @@
                                                 <i class="fas fa-cube"></i>
                                             </div>
                                             <div class="text-wrapper">
-                                                <h4 class="card-title">Good Foundation</h4>
-                                                <p>Get a solid foundation for your self development efforts. Try PhoneEx mobile app for any mobile platform</p>
+                                                <h4 class="card-title">Excellent Foundation</h4>
+                                                <p>Use a solid foundation for your mobile phone needs. Try the PhoneEx mobile app today</p>
                                             </div>
                                         </div>
                                     </div>
@@ -268,8 +308,8 @@
                                 <!-- Text And Icon Cards Area -->
                                 <div class="col-md-8">
                                     <div class="text-area">
-                                        <h3>Track Result Based On Your</h3>
-                                        <p>After you've configured the app and settled on the data gathering techniques you can not start the information trackers and start collecting those <a class="turquoise" href="#your-link">interesting details</a>. You can always change them.</p>
+                                        <h3>Buying on phoneEx is as Easy As 1, 2, 3 !</h3>
+                                        <p>With an easy and intuitive app, buyers get the phones they need from reputable distributors  at the right price and guaranteed.</p>
                                     </div> <!-- end of text-area -->
                                     
                                     <div class="icon-cards-area">
@@ -278,8 +318,8 @@
                                                     <i class="fas fa-cube"></i>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Good Foundation</h4>
-                                                    <p>Get a solid foundation for your self development efforts. Try PhoneEx mobile app for any mobile platform</p>
+                                                    <h4 class="card-title">Step One</h4>
+                                                    <p><b>Need Equipment?</b> - Make A Request. Simply click the model you need along with the relevant criteria and Press "Send".  Your Request will go out to a network of vetted distributers who will send you back quotes. </p>
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -287,8 +327,8 @@
                                                     <i class="far fa-bookmark"></i>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Easy Reading</h4>
-                                                    <p>Reading focus mode for long form articles, ebooks and other materials which involve large text areas</p>
+                                                    <h4 class="card-title">Step Two</h4>
+                                                    <p>You will get offers on your request.  Simply click to accept the offer and your payment method will automatically be charged.  You can accept as many offers as you like.</p>
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -296,8 +336,8 @@
                                                     <i class="far fa-calendar-check"></i>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Calendar Input</h4>
-                                                    <p>Schedule your appointments, meetings and periodical evaluations using the provided in-app calendar option</p>
+                                                    <h4 class="card-title">Step Three </h4>
+                                                    <p>You will get an alert once the Seller ships.  </p>
                                                 </div>
                                             </div>
                                             <div class="card">
@@ -305,8 +345,8 @@
                                                     <i class="far fa-file-code"></i>
                                                 </div>
                                                 <div class="card-body">
-                                                    <h4 class="card-title">Visual Editor</h4>
-                                                    <p>PhoneEx provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
+                                                    <h4 class="card-title">Receive Your Merchandise</h4>
+                                                    <p>Congratulations! You have received your merchandise.  Probelm? - No worries! You have 2 days to return the merchandise.  After that, it is backed by our vetted Sellers Warranty </p>
                                                 </div>
                                             </div>
                                     </div> <!-- end of icon cards area -->
@@ -331,8 +371,8 @@
                                                 <i class="far fa-calendar-check"></i>
                                             </div>
                                             <div class="card-body">
-                                                <h4 class="card-title">Calendar Input</h4>
-                                                <p>Schedule your appointments, meetings and periodical evaluations using the provided in-app calendar option</p>
+                                                <h4 class="card-title">Step One</h4>
+                                                <p>Look at your Home Screen to see the many requests from the buyers.  Have inventory?  Make an offer </p>
                                             </div>
                                         </div>
                                         <div class="card">
@@ -340,8 +380,8 @@
                                                 <i class="far fa-file-code"></i>
                                             </div>
                                             <div class="card-body">
-                                                <h4 class="card-title">Visual Editor</h4>
-                                                <p>PhoneEx provides a well designed and ergonomic visual editor for you to edit your notes and input data</p>
+                                                <h4 class="card-title">Step Two</h4>
+                                                <p>The Buyer accepts your offer.  Time to Ship</p>
                                             </div>
                                         </div>
                                         <div class="card">
@@ -349,8 +389,8 @@
                                                 <i class="fas fa-cube"></i>
                                             </div>
                                             <div class="card-body">
-                                                <h4 class="card-title">Good Foundation</h4>
-                                                <p>Get a solid foundation for your self development efforts. Try PhoneEx mobile app for any mobile platform</p>
+                                                <h4 class="card-title">Step Three</h4>
+                                                <p>The buyer receives your merchandise and accepts it.  That's it! You get paid.</p>
                                             </div>
                                         </div>
                                         <div class="card">
@@ -358,15 +398,15 @@
                                                 <i class="far fa-bookmark"></i>
                                             </div>
                                             <div class="card-body">
-                                                <h4 class="card-title">Easy Reading</h4>
-                                                <p>Reading focus mode for long form articles, ebooks and other materials which involve large text areas</p>
+                                                <h4 class="card-title">It's That Easy</h4>
+                                                <p>Gone will be the days of a few points of selling hardware. Make 100% more margin. Have extensive outreach selling to a variety of customers minimizing risk .</p>
                                             </div>
                                         </div>
                                     </div> <!-- end of icon cards area -->
                                     
                                     <div class="text-area">
-                                        <h3>Monitoring Tools Evaluation</h3>
-                                        <p>Monitor the evolution of your finances and health state using tools integrated in PhoneEx. The generated real time reports can be filtered based on any <a class="turquoise" href="#your-link">desired criteria</a>.</p>
+                                        <h3>Selling on phoneEx is as Easy As 1, 2, 3 !</h3>
+                                        <p>With an easy and intuitive app, Sellers sell inventory at high margins with no paperwork, payment guaranteed.</p>
                                     </div> <!-- end of text-area -->
                                 </div> <!-- end of col-md-8 -->
                                 <!-- end of text and icon cards area -->
@@ -397,7 +437,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2>PREVIEW</h2>
-                    <div class="p-heading p-large">Target the right customers for your business with the help of PhoneEx's patented segmentation technology</div>
+                    <div class="p-heading p-large">Watch The Video to see PhoneEx in Action!</div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
             <div class="row">
@@ -406,7 +446,7 @@
                     <!-- Video Preview -->
                     <div class="image-container">
                         <div class="video-wrapper">
-                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=fLCjQJCekTs" data-effect="fadeIn">
+                            <a class="popup-youtube" href="https://www.youtube.com/watch?v=CwQef9_q8fo" data-effect="fadeIn">
                                 <img class="img-fluid" src="images/video-frame.jpg" alt="alternative">
                                 <span class="video-play-button">
                                     <span></span>
@@ -641,8 +681,9 @@
                     <div class="text-container">
                         <h2>Download <span class="blue">PhoneEx</span></h2>
                         <p class="p-large">Target the right customers for your business with the help of PhoneEx's patented technology and increase conversion figures in less than 2 weeks</p>
-                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-apple"></i>APP STORE</a>
-                        <a class="btn-solid-lg" href="#your-link"><i class="fab fa-google-play"></i>PLAY STORE</a>
+                        <a class="btn-solid-lg" href="waitlist.html"><i class="fab fa-apple"></i>APP STORE</a>
+                        <a class="btn-solid-lg" href="waitlist.html"><i class="fab fa-google-play"></i>PLAY STORE</a>
+                        <a class="btn-solid-lg page-scroll" href="waitlist.html"><i class="fa fa-desktop"></i> WEB  LINK </a>
                     </div> <!-- end of text-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-6 col-xl-7">
@@ -655,39 +696,6 @@
     </div> <!-- end of basic-4 -->
     <!-- end of download -->
 
-
-    <!-- Statistics -->
-    <div class="counter">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    
-                    <!-- Counter -->
-                    <div id="counter">
-                        <div class="cell">
-                            <div class="counter-value number-count" data-count="231">1</div>
-                            <p class="counter-info">Happy Users</p>
-                        </div>
-                        <div class="cell">
-                            <div class="counter-value number-count" data-count="85">1</div>
-                            <p class="counter-info">Issues Solved</p>
-                        </div>
-                        <div class="cell">
-                            <div class="counter-value number-count" data-count="59">1</div>
-                            <p class="counter-info">Good Reviews</p>
-                        </div>
-                        <div class="cell">
-                            <div class="counter-value number-count" data-count="127">1</div>
-                            <p class="counter-info">Case Studies</p>
-                        </div>
-                    </div>
-                    <!-- end of counter -->
-                    
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </div> <!-- end of counter -->
-    <!-- end of statistics -->
 
 
     <!-- Contact -->
@@ -710,17 +718,22 @@
                     <!-- Contact Form -->
                     <form id="contactForm" data-toggle="validator" data-focus="false">
                         <div class="form-group">
-                            <input type="text" class="form-control-input" id="cname" required>
+                            <input type="text" class="form-control-input" id="name" required>
                             <label class="label-control" for="cname">Name</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control-input" id="cemail" required>
+                            <input type="text" class="form-control-input" id="phone" required>
+                            <label class="label-control" for="cname">Phone Number</label>
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control-input" id="email" required>
                             <label class="label-control" for="cemail">Email</label>
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control-textarea" id="cmessage" required></textarea>
+                            <textarea class="form-control-textarea" id="desc" required></textarea>
                             <label class="label-control" for="cmessage">Your message</label>
                             <div class="help-block with-errors"></div>
                         </div>
@@ -729,14 +742,14 @@
                             <div class="help-block with-errors"></div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
+                            <button id="submit" button type="submit" class="form-control-submit-button">SUBMIT MESSAGE</button>
                         </div>
                         <div class="form-message">
                             <div id="cmsgSubmit" class="h3 text-center hidden"></div>
                         </div>
                     </form>
                     <!-- end of contact form -->
-
+					<div id="form-response"></div>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
         </div> <!-- end of container -->
@@ -751,7 +764,7 @@
                 <div class="col-md-4">
                     <div class="footer-col">
                         <h4>About PhoneEx</h4>
-                        <p>We're passionate about creating the best mobile apps for personal development</p>
+                        <p>Mobile E-Commerce Done Better.  PhoneEx was designed based on input from wholesale mobile buyers and sellers to be the most advanced easy to use app to buy and sell mobile phones.</p>
                     </div>
                 </div> <!-- end of col -->
                 <div class="col-md-4">
